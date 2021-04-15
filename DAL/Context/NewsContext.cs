@@ -14,14 +14,14 @@ namespace DAL.Context
 
         public NewsContext(DbContextOptions options) : base(options)
         {
-            
+
             this.Initialize();
         }
 
         private void Initialize()
         {
             this.Database.EnsureCreated();
-            if(Posts.Any())
+            if (Posts.Any())
             {
                 return;
             }
@@ -30,8 +30,24 @@ namespace DAL.Context
             SaveChanges();
             Users.Add(new User { Name = "Я" });
             SaveChanges();
-            Posts.Add(new Post() { ThemeId = Themes.FirstOrDefault().Id, UserId = Users.FirstOrDefault().Id, Content = "На этом месте 32 мая 1985 года ничего не произошло" });
-            Posts.Add(new Post() { ThemeId = Themes.FirstOrDefault().Id, UserId = Users.FirstOrDefault().Id, Content = "Фантазии нет" });
+            Posts.Add(new Post()
+            {
+                ThemeId = Themes.FirstOrDefault().Id,
+                UserId = Users.FirstOrDefault().Id,
+                Content = "На этом месте 32 мая 1985 года ничего не произошло",
+                Title = "Срочно!",
+                ContentPreview = "На этом месте...",
+                Date = DateTime.Today
+            });
+            Posts.Add(new Post()
+            {
+                ThemeId = Themes.FirstOrDefault().Id,
+                UserId = Users.FirstOrDefault().Id,
+                Content = "Фантазии нет",
+                Title = "Не очень срочно",
+                ContentPreview = "Фантаз...",
+                Date = DateTime.Today.AddDays(-1)
+            }) ;
             SaveChanges();
 
         }

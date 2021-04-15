@@ -1,0 +1,13 @@
+.forUL{
+    margin: 0 auto;
+}
+
+.LogoStyle{
+    text-decoration: none;
+    color: #4E4E4E;
+}
+
+.LogoStyle:hover{
+    text-decoration: none;
+    color: #4E4E4E;
+}

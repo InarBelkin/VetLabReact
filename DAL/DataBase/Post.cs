@@ -12,7 +12,7 @@ namespace DAL.Database
         public int Id { get; set; }
         public int UserId { get; set; }
         [ForeignKey("UserId")]
-        public virtual User User{ get; set; }
+        public virtual User User { get; set; }
 
         public int ThemeId { get; set; }
         [ForeignKey("ThemeId")]
@@ -21,6 +21,7 @@ namespace DAL.Database
 
         public string Title { get; set; }
         public string Content { get; set; }
-
+        public string ContentPreview { get; set; }
+        public DateTime Date { get; set; }
     }
 }

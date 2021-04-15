@@ -21,6 +21,8 @@ namespace DAL.Repositories
                 To.ThemeId = item.ThemeId;
                 To.Title = item.Title;
                 To.Content = item.Content;
+                To.ContentPreview = item.ContentPreview;
+                To.Date = item.Date;
                 base.UpdateItem(To);
             }
         }
