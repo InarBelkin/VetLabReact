@@ -21,7 +21,7 @@ namespace DAL.Context
         private void Initialize()
         {
             this.Database.EnsureCreated();
-            if (Posts.Any())
+            if (Posts.Any()&& Themes.Any() && Users.Any())
             {
                 return;
             }

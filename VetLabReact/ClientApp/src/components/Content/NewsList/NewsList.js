@@ -4,12 +4,14 @@ import {RenderDom} from "../../../render";
 
 // import 'bootstrap/dist/css/bootstrap.css';
 
+
 class NewsList extends Component {
     constructor(props) {
         super(props);
         this.state = {mposts: []};
         this.LoadAll();
         this.onRemovePost = this.onRemovePost.bind(this);
+        this.onEditPost = this.onEditPost.bind(this);
 
     }
 
@@ -38,11 +40,20 @@ class NewsList extends Component {
         }
     }
 
+    async onEditPost(mpost) {
+        if(mpost){
+            window.location.assign("/editpost/"+mpost.id);
+        }
+    }
+
     render() {
-    var remove = this.onRemovePost;
+        var remove = this.onRemovePost;
+        var edit = this.onEditPost;
         return (
             <div>
-                {this.state.mposts.map(function(mpost){return <Post key={mpost.id} mpost = {mpost} onRemove={remove}/>})}
+                {this.state.mposts.map(function (mpost) {
+                    return <Post key={mpost.id} mpost={mpost} onRemove={remove} onEdit={edit}/>
+                })}
             </div>
         )
     }

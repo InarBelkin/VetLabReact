@@ -8,12 +8,17 @@ class Post extends Component {
         super(props);
         this.state = props.mpost
         this.onClick=this.onClick.bind(this);
+        this.onClickEdit = this.onClickEdit.bind(this);
         //this.state = {props.}
 
     }
 
     onClick(e) {
         this.props.onRemove(this.state);
+    }
+
+    onClickEdit(e){
+        this.props.onEdit(this.state)
     }
 
     // render() {
@@ -35,8 +40,9 @@ class Post extends Component {
                 <p align="right">{this.state.date}</p>
                 <NavLink to={"/1"} className={s.STitle}>{this.state.title}</NavLink>
                 <p><button onClick={this.onClick}>Удалить</button></p>
-                <p>{this.state.content}</p>
-                <p>Изменить</p>
+                <p>{this.state.contentPreview}</p>
+                <p><button onClick={this.onClickEdit}>Изменить</button></p>
+
             </div>
         )
     }

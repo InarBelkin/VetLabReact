@@ -17,6 +17,7 @@ class Content extends Component {
                     <div className="col-sm-9">
                         <Route exact path='/postedit' component={PostEditor}/>
                         <Route exact path='/' render={()=><NewsList apiUrl={"/api/posts/"}/>}/>
+                        <Route path='/editpost/' render={()=><PostEditor />}/>
                     </div>
                 </div>
             </div>
