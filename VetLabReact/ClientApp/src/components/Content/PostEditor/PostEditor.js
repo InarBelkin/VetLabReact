@@ -8,28 +8,35 @@ import PostForm from "./PostForm";
 class PostEditor extends Component {
     constructor(props) {
         super(props);
-        this.state = {post: null, form: null}
+        //this.state = {post: { id:0,userId:0,themeId:0,title:"", content:"",date:"" }, form: null}
+        this.state = {post: null, form: null, isLoading: true};
         this.onSubmit = this.onSubmit.bind(this);
         this.LoadPost = this.LoadPost.bind(this);
-        this.LoadPost();
+
     }
 
 
-    /*
-        onTitleChange(e) {
-            this.setState({title: e.target.value});
-        }*/
     async LoadPost() {
         let postid = this.props.match.params.id;
-        let request = await fetch(this.props.apiUrl + postid, {
+        let request = await fetch("/api/posts/" + postid, {
             method: "GET",
             mode: "cors",
             credintials: "include"
         });
         if (request.ok) {
             var res = await request.json();
+
+
             this.state.post = res;
+            this.setState({"isLoading":false});
+
+            //this.state.post = res;
+            // alert(request.json());
         }
+    }
+
+    componentDidMount() {
+        this.LoadPost();
     }
 
     getPostForm() {
@@ -59,11 +66,12 @@ class PostEditor extends Component {
     }
 
     render() {
+        var content = this.state.isLoading === true ? <p>Загрузка</p> : <PostForm
+            ResponeMethod={this.SetPost}
+            post={this.state.post}/>;
         return (
             <div className={s.PEditor}>
-                <PostForm
-                    ResponeMethod={this.SetPost}
-                    post={this.state.post}/>
+                {content}
                 <button onClick={this.OnCreate}>Создать</button>
             </div>
 
