@@ -4,6 +4,7 @@ import SidePanel from "./SidePanel/SidePanel";
 import NewsList from "./NewsList/NewsList";
 import  {Route} from "react-router-dom"
 import PostEditor from "./PostEditor/PostEditor";
+import PostCreator from "./PostEditor/PostCreator";
 class Content extends Component {
     constructor(props) {
         super(props);
@@ -15,9 +16,10 @@ class Content extends Component {
                 <div className="row">
                     <div className="col-sm-3"><SidePanel/></div>
                     <div className="col-sm-9">
-                        <Route exact path='/postedit' component={PostEditor}/>
+                        <Route exact path='/postcreate' component={PostCreator}/>
                         <Route exact path='/' render={()=><NewsList apiUrl={"/api/posts/"}/>}/>
-                        <Route path='/editpost/' render={()=><PostEditor />}/>
+                        <Route path = '/postedit/:id' component={PostEditor}/>
+
                     </div>
                 </div>
             </div>

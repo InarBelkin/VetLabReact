@@ -1,55 +1,47 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import s from "./PostEditor.module.css";
-import classNames from "classnames";
 import Select from 'react-select'
-
-const options = [
-    {value: 'chocolate', label: 'Chocolate'},
-    {value: 'strawberry', label: 'Strawberry'},
-    {value: 'vanilla', label: 'Vanilla'}
-]
+import {RenderDom} from "../../../render";
+import PostForm from "./PostForm";
 
 class PostEditor extends Component {
     constructor(props) {
         super(props);
-        this.state = {title: "", content: "", themeid: 2, themes: []}
+        this.state = {post: null, form: null}
         this.onSubmit = this.onSubmit.bind(this);
-        this.onTitleChange = this.onTitleChange.bind(this);
-        this.onContentChange = this.onContentChange.bind(this);
-        this.onThemeIdChange = this.onThemeIdChange.bind(this);
-        this.LoadThemes = this.LoadThemes.bind(this);
-        this.LoadThemes();
+        this.LoadPost = this.LoadPost.bind(this);
+        this.LoadPost();
     }
 
-    async LoadThemes() {
-        var request = await fetch("/api/themes/", {
+
+    /*
+        onTitleChange(e) {
+            this.setState({title: e.target.value});
+        }*/
+    async LoadPost() {
+        let postid = this.props.match.params.id;
+        let request = await fetch(this.props.apiUrl + postid, {
             method: "GET",
             mode: "cors",
             credintials: "include"
         });
         if (request.ok) {
             var res = await request.json();
-            this.setState({"themes": res});
+            this.state.post = res;
         }
     }
 
-    onTitleChange(e) {
-        this.setState({title: e.target.value});
-    }
-
-    onContentChange(e) {
-        this.setState({content: e.target.value});
-    }
-
-    onThemeIdChange(e) {
-        this.state.themeid = e.id;
+    getPostForm() {
+        return <PostForm
+            ResponeMethod={this.SetPost}
+            post={this.state.post}/>
     }
 
     async onSubmit(e) {
         e.preventDefault();
         let request = await fetch("/api/posts/", {
-            method: "POST",
+            method: "PUP",
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
@@ -62,28 +54,17 @@ class PostEditor extends Component {
                 "date": "2021-03-13T23:00:00"
             })
         });
-        window.location.assign("/");
+        //window.location.assign("/");
+        document.location = ('/');
     }
 
     render() {
         return (
             <div className={s.PEditor}>
-                <form onSubmit={this.onSubmit}>
-                    {/*<p className={classNames(s.fc,s.sc)}>Заголовок</p>*/}
-                    <p>Тема</p>
-                    <Select getOptionLabel={option => option.name}
-                            getOptionValue={option => option.id}
-                           // value={this.state.themes[0]}
-                            onChange={this.onThemeIdChange}
-                            options={this.state.themes}/>
-                    <p>Заголовок</p>
-                    <input type={<textarea name="" id="" cols="30" rows="10"></textarea>}
-                           value={this.state.title}
-                           onChange={this.onTitleChange}/>
-                    <p>Текст</p>
-                    <textarea className={s.PContent} value={this.state.content} onChange={this.onContentChange}/>
-                    <input type="submit" value="Отправить"/>
-                </form>
+                <PostForm
+                    ResponeMethod={this.SetPost}
+                    post={this.state.post}/>
+                <button onClick={this.OnCreate}>Создать</button>
             </div>
 
 

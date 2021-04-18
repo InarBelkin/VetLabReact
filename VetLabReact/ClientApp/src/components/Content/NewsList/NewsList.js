@@ -23,7 +23,7 @@ class NewsList extends Component {
         });
         if (request.ok) {
             var res = await request.json();
-            this.setState({"mposts": res})
+            this.setState({"mposts": res});
         }
     }
 
@@ -42,7 +42,7 @@ class NewsList extends Component {
 
     async onEditPost(mpost) {
         if(mpost){
-            window.location.assign("/editpost/"+mpost.id);
+            window.location.assign("/postedit/"+mpost.id);
         }
     }
 

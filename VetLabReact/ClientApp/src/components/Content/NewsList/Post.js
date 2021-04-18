@@ -21,18 +21,6 @@ class Post extends Component {
         this.props.onEdit(this.state)
     }
 
-    // render() {
-    //     return(
-    //         <div>
-    //             <div>
-    //                 <p>Название= {this.props.mpost.title}</p>
-    //                 <p>Внутренности={this.props.mpost.content}</p>
-    //             </div>
-    //
-    //         </div>
-    //     )
-    // }
-
     render() {
         return (
             <div className={s.SBlock}>
