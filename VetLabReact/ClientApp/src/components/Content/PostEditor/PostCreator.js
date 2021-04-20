@@ -6,13 +6,14 @@ import PostForm from "./PostForm";
 class PostCreator extends Component {
     constructor(props) {
         super(props);
-        this.state = {post:null,form:null}
+        this.state = {post: {id: 0, userId: 0, themeId: 0, title: "", content: "", date: ""}}
         this.OnCreate = this.OnCreate.bind(this);
-        this.state.form = <PostForm ResponeMethod={this.SetPost}/>
+
     }
 
 
     async OnCreate() {
+        var rez = this.ReturnPost();
 
         let request = await fetch("/api/posts/", {
             method: "POST",
@@ -20,10 +21,10 @@ class PostCreator extends Component {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify({
-                "contentPreview": this.state.post.content,
-                "content": this.state.post.content,
-                "title": this.state.post.title,
-                "themeId": this.state.post.themeid,
+                "contentPreview": rez.content,
+                "content": rez.content,
+                "title": rez.title,
+                "themeId": rez.themeId,
                 "userId": 1,
                 "date": "2021-03-13T23:00:00"
             })
@@ -31,16 +32,17 @@ class PostCreator extends Component {
         document.location = ('/');
     }
 
-    SetPost(newpost) {
-        this.state.post = newpost;
+    ReturnPost() {
+        return this.state.post;
     }
 
 
     render() {
         return (
             <div>
-                {this.state.form}
-                {/*<PostForm ResponeMethod={this.SetPost}/>*/}
+                <PostForm
+                    ResponseMethod={this.ReturnPost}
+                    post={this.state.post}/>
                 <button onClick={this.OnCreate}>Создать</button>
             </div>
         )

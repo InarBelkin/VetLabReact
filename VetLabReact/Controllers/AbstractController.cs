@@ -47,7 +47,7 @@ namespace VetLabReact.Controllers
                 return BadRequest(ModelState);
             }
             rep.UpdateItem(model);
-            await db.Save();
+            var a = await db.Save();
 
             return NoContent();
         }
