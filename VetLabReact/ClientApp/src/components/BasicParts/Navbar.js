@@ -22,7 +22,7 @@ class BsNavbar extends Component {
                             <NavLink to={"/postcreate"} className="nav-link">Редактор</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={"/add-airplane"} className="nav-link">Add airplane</NavLink>
+                            <NavLink to={"/register"} className="nav-link">Регистрация</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to={"/add-city"} className="nav-link">Add city</NavLink>

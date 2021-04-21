@@ -11,8 +11,6 @@ namespace DAL.Context
 {
     public class NewsContext : IdentityDbContext<User>
     {
-
-
         public NewsContext(DbContextOptions options) : base(options)
         {
 

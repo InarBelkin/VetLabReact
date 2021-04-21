@@ -5,6 +5,7 @@ import NewsList from "./NewsList/NewsList";
 import  {Route} from "react-router-dom"
 import PostEditor from "./PostEditor/PostEditor";
 import PostCreator from "./PostEditor/PostCreator";
+import RegisterForm from "./Register/RegisterForm";
 class Content extends Component {
     constructor(props) {
         super(props);
@@ -19,6 +20,7 @@ class Content extends Component {
                         <Route exact path='/postcreate' component={PostCreator}/>
                         <Route exact path='/' render={()=><NewsList apiUrl={"/api/posts/"}/>}/>
                         <Route path = '/postedit/:id' component={PostEditor}/>
+                        <Route path = '/register' component = {RegisterForm}/>
 
                     </div>
                 </div>
