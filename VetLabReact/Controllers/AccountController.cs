@@ -48,6 +48,7 @@ namespace VetLabReact.Controllers
                     }
                     var errorMsg = new
                     {
+
                         message = "Пользователь не добавлен.",
                         error = ModelState.Values.SelectMany(e => e.Errors.Select(er => er.ErrorMessage))
                     };
