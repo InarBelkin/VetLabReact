@@ -28,7 +28,13 @@ namespace VetLabReact.Controllers
             if (ModelState.IsValid)
             {
                 User user = new User { UserName = model.Login };
-
+                if(user.UserName =="Садыков")
+                {
+                    return BadRequest(new
+                    {
+                        message = "Вам доступ сюда запрещён"                      
+                    });
+                }    
                 var result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -48,7 +54,6 @@ namespace VetLabReact.Controllers
                     }
                     var errorMsg = new
                     {
-
                         message = "Пользователь не добавлен.",
                         error = ModelState.Values.SelectMany(e => e.Errors.Select(er => er.ErrorMessage))
                     };

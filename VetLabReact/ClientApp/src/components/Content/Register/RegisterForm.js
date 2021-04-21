@@ -5,7 +5,7 @@ import {Button} from "reactstrap";
 class RegisterForm extends Component {
     constructor(props) {
         super(props);
-        this.state = {login: "", pass: "", passConf: "", message: ""}
+        this.state = {login: "", pass: "", passConf: "", message: "", errors: []}
         this.OnRegister = this.OnRegister.bind(this);
         this.onChange = this.onChange.bind(this);
     }
@@ -22,11 +22,16 @@ class RegisterForm extends Component {
                 "PasswordConfirm": this.state.passConf
             })
         });
-        if (request.ok) {
-            var res = await request.json();
-            this.setState({message: res.message});
-
+        var res = await request.json();
+        this.setState({message: res.message});
+        if (!request.ok && res.error != undefined && res.error != null) {
+            this.state.errors = res.error;
+            this.setState({errors: res.error});
+        } else {
+            this.setState({errors:[]});
         }
+
+
     }
 
     onChangeLogin(e) {
@@ -44,19 +49,26 @@ class RegisterForm extends Component {
             <div>
                 <form>
                     <p>{this.state.message}</p>
+                    <div>{this.state.errors.map(function (mes) {
+                        /* if(this.state.errors.count>0)*/
+                        return <p>{mes}</p>
+                    })}</div>
+
                     <p>Логин:</p>
                     <input value={this.state.login}
                            name="login"
                            onChange={this.onChange}/>
                     <p>Пароль:</p>
                     <input value={this.state.pass}
+                           type={"password"}
                            name="pass"
                            onChange={this.onChange}/>
                     <p>Подтверждение пароля:</p>
                     <input value={this.state.passConf}
                            name="passConf"
+                           type={"password"}
                            onChange={this.onChange}/>
-                    <Button onClick={this.OnRegister}>Регистрация</Button>
+                    <div><button onClick={this.OnRegister} >Регистрация</button></div>
                 </form>
 
             </div>

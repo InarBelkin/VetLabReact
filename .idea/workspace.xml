@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8a1725-1523-42f6-ba1f-8aa24969a66d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/BasicParts/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/BasicParts/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/NewsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/NewsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/Controllers/AccountController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../AirportReact" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -70,6 +62,7 @@
       <workItem from="1618749686949" duration="10700000" />
       <workItem from="1618762142922" duration="61000" />
       <workItem from="1618762262138" duration="153000" />
+      <workItem from="1619035979488" duration="4506000" />
     </task>
     <servers />
   </component>
