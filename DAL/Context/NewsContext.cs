@@ -1,4 +1,5 @@
 ﻿using DAL.Database;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Context
 {
-    public class NewsContext : DbContext
+    public class NewsContext : IdentityDbContext<User>
     {
 
 
@@ -28,7 +29,7 @@ namespace DAL.Context
             Themes.Add(new Theme { Name = "Срочное" });
             Themes.Add(new Theme { Name = "Обычное" });
             SaveChanges();
-            Users.Add(new User { Name = "Я" });
+            Users.Add(new User { UserName = "Я" });
             SaveChanges();
             Posts.Add(new Post()
             {
@@ -54,7 +55,11 @@ namespace DAL.Context
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Theme> Themes { get; set; }
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DAL.Database;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,9 @@ namespace DAL.Context
     {
         public static IServiceCollection RegisterBaseContext(this IServiceCollection services, string connection)
         {
+
+            services.AddIdentity<User, IdentityRole>()
+               .AddEntityFrameworkStores<NewsContext>();
             services.AddScoped(typeof(DbContext), typeof(NewsContext));
 
            // services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));

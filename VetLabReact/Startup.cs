@@ -22,6 +22,7 @@ namespace VetLabReact
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.RegisterDatabase(connection);
 
@@ -47,6 +48,7 @@ namespace VetLabReact
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseAuthentication();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
