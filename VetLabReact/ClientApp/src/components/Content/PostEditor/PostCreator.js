@@ -25,7 +25,7 @@ class PostCreator extends Component {
                 "content": rez.content,
                 "title": rez.title,
                 "themeId": rez.themeId,
-                "userId": 1,
+                "userId": null,
                 "date": "2021-03-13T23:00:00"
             })
         });

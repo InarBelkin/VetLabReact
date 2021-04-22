@@ -17,7 +17,7 @@ namespace DAL.Repositories
             Post To = db2.Find(item.Id);
             if (To != null)
             {
-                To.UserId = item.UserId;
+                //To.UserId = item.UserId;
                 To.ThemeId = item.ThemeId;
                 To.Title = item.Title;
                 To.Content = item.Content;
