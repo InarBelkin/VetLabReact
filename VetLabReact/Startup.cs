@@ -1,12 +1,17 @@
 using BLL;
+using DAL.Database;
+using DAL.DataBase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
 
 namespace VetLabReact
 {
@@ -18,6 +23,25 @@ namespace VetLabReact
         }
 
         public IConfiguration Configuration { get; }
+
+        private static async Task CreateUserRoles(IServiceProvider ServiceProvider)
+        {
+            RoleManager<IdentityRole> RoleManager = ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            UserManager<User> UserManager = ServiceProvider.GetRequiredService<UserManager<User>>();
+            if (await RoleManager.FindByNameAsync(RolesNames.Admin) == null)
+            {
+                await RoleManager.CreateAsync(new IdentityRole(RolesNames.Admin));
+            }
+            if (await RoleManager.FindByNameAsync(RolesNames.User) == null)
+            {
+                await RoleManager.CreateAsync(new IdentityRole(RolesNames.User));
+            }
+            string AdminName = "InarBelkin";
+
+
+        }
+
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -46,7 +70,7 @@ namespace VetLabReact
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider services)
         {
             app.UseAuthentication();
             if (env.IsDevelopment())

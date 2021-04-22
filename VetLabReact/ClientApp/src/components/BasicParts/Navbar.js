@@ -27,13 +27,10 @@ class BsNavbar extends Component {
                         <li className="nav-item">
                             <NavLink to={"/register"} className="nav-link">Регистрация</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to={"/add-city"} className="nav-link">Add city</NavLink>
-                        </li>
                     </ul>
                 </div>
                 <ModalAuthorization/>
-              {/*  <form className="form-inline my-2 my-lg-0">
+                {/*  <form className="form-inline my-2 my-lg-0">
                     <button className="btn btn-outline-dark" type="submit">Авторизация</button>
 
                 </form>*/}
