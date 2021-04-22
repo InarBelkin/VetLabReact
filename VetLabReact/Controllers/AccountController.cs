@@ -32,7 +32,7 @@ namespace VetLabReact.Controllers
                 {
                     return BadRequest(new
                     {
-                        message = "Вам доступ сюда запрещён"                      
+                        message = "Вам доступ сюда запрещён "                      
                     });
                 }    
                 var result = await userManager.CreateAsync(user, model.Password);
@@ -71,6 +71,53 @@ namespace VetLabReact.Controllers
             }
         }
 
+        [Route("api/Account/Login")]
+        public async Task<IActionResult> Login([FromBody] LoginVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await signInManager.PasswordSignInAsync(model.Login, model.Password, model.RememberMe, false);
+                if (result.Succeeded)
+                {
+                    var msg = new
+                    {
+                        message = $"Выполнен вход пользователем: {model.Login}"
+                    };
+                    return Ok(msg);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    var errorMsg = new
+                    {
+                        message = "Вход не выполнен.",
+                        error = ModelState.Values.SelectMany(e => e.Errors.Select(er => er.ErrorMessage))
+                    };
+                    return BadRequest(errorMsg);
+                }
+            }
+            else
+            {
+                var errorMsg = new
+                {
+                    message = "Вход не выполнен.",
+                    error = ModelState.Values.SelectMany(e => e.Errors.Select(er => er.ErrorMessage))
+                };
+                return BadRequest(errorMsg);
+            }
+        }
+
+        [HttpPost]
+        [Route("api/Account/LogOut")]
+        public async Task<IActionResult> LogOff()
+        {
+            await signInManager.SignOutAsync();
+            var msg = new
+            {
+                message = "Выполнен выход."
+            };
+            return Ok(msg);
+        }
 
 
     }

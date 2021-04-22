@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Button} from "reactstrap";
+
 
 class RegisterForm extends Component {
     constructor(props) {

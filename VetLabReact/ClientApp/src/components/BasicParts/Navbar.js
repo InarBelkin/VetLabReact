@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {NavLink} from "react-router-dom";
-import  s from "./Navbar.module.css"
+import s from "./Navbar.module.css"
+import ModalAuthorization from "../Content/Register/ModalAuthorization ";
+import Example from "../Content/Register/Example";
 
 class BsNavbar extends Component {
     constructor(props) {
         super(props);
     }
+
     render() {
-        return(
+        return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="navbar-brand" style={{margin: 0, padding: 0}}>
                     <NavLink to={"/"} className={s.LogoStyle}>Скучные новости</NavLink>
@@ -29,9 +32,16 @@ class BsNavbar extends Component {
                         </li>
                     </ul>
                 </div>
+                <Example/>
+              {/*  <form className="form-inline my-2 my-lg-0">
+                    <button className="btn btn-outline-dark" type="submit">Авторизация</button>
+
+                </form>*/}
+
             </nav>
         )
     }
 
 }
+
 export default BsNavbar
