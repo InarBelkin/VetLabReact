@@ -2,13 +2,14 @@ import React, {Component, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Button, Modal} from "react-bootstrap";
 import s from "./ModalAuthorization.module.css"
+import classNames from "classnames";
 
 class ModalAuthorization extends Component {
     constructor(props) {
         super(props);
         this.state = {
             show: false, login: "", pass: "", remember: false, message: "", errors: [],
-            username: "", isAuth: false, nameButton: ""
+            username: "", isAuth: false
         }
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -17,16 +18,7 @@ class ModalAuthorization extends Component {
         this.onChangeCheck = this.onChangeCheck.bind(this);
         this.getUser = this.getUser.bind(this);
         this.OnLogout = this.OnLogout.bind(this);
-        this.setAuthorize = this.setAuthorize.bind(this);
-        this.ClickButton = this.ClickButton.bind(this);
         this.getUser();
-    }
-
-    setAuthorize(value) {
-        if (value) {
-            this.setState({nameButton: "Выйти"});
-        } else this.setState({nameButton: "Авторизоваться"});
-        this.setState({isAuth: value});
     }
 
     async getUser() {
@@ -40,8 +32,7 @@ class ModalAuthorization extends Component {
         if (res.isAuth) {
             this.setState({username: res.user.userName});
         } else this.setState({username: "Гость"});
-        this.setAuthorize(res.isAuth);
-        //this.setState({isAuth: res.isAuth});
+        this.setState({isAuth: res.isAuth});
     }
 
     onChange(e) {
@@ -100,20 +91,18 @@ class ModalAuthorization extends Component {
         this.setState({show: true});
     }
 
-    ClickButton() {
-        if (this.state.isAuth) {
-            this.OnLogout();
-        } else this.handleShow();
-    }
-
     render() {
+        var a = this.state.isAuth ?
+            <Button variant="primary" onClick={this.OnLogout}>
+                Выход </Button>:
+        <Button variant="primary" onClick={this.handleShow}>
+            Авторизоваться </Button>;
         return (
-            <>
-                <p>{this.state.username}</p>
-                <Button variant="primary" onClick={this.ClickButton}>
-                    {this.state.nameButton}
-                </Button>
-
+            <div className = "s.AuthBl">
+                <ul className={"navbar-nav"}>
+                    <li className={classNames("nav-item", s.UserName)} >{this.state.username}</li>
+                    <li className="nav-item">{a}</li>
+                </ul>
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Авторизация</Modal.Title>
@@ -145,7 +134,7 @@ class ModalAuthorization extends Component {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-            </>
+            </div>
         )
     }
 
