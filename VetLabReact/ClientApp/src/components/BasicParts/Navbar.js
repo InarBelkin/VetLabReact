@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {NavLink} from "react-router-dom";
 import s from "./Navbar.module.css"
-import ModalAuthorization from "../Content/Register/ModalAuthorization ";
-import Example from "../Content/Register/Example";
+import ModalAuthorization from "../Content/Register/ModalAuthorization";
+
 
 class BsNavbar extends Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class BsNavbar extends Component {
                         </li>
                     </ul>
                 </div>
-                <Example/>
+                <ModalAuthorization/>
               {/*  <form className="form-inline my-2 my-lg-0">
                     <button className="btn btn-outline-dark" type="submit">Авторизация</button>
 

@@ -28,13 +28,13 @@ namespace VetLabReact.Controllers
             if (ModelState.IsValid)
             {
                 User user = new User { UserName = model.Login };
-                if(user.UserName =="Садыков")
+                if (user.UserName == "Садыков")
                 {
                     return BadRequest(new
                     {
-                        message = "Вам доступ сюда запрещён "                      
+                        message = "Вам доступ сюда запрещён "
                     });
-                }    
+                }
                 var result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -119,6 +119,18 @@ namespace VetLabReact.Controllers
             return Ok(msg);
         }
 
+        [HttpPost]
+        [Route("api/Account/isAuthenticated")]
+        public async Task<IActionResult> LogisAuthenticatedOff()
+        {
+            User usr = await GetCurrentUserAsync();
+            bool isAuth = usr != null;
+            //var msg = new { isAuth, usr };
+            var msg = new { isAuth= isAuth, user = usr };
+            return Ok(msg);
+        }
+
+        private Task<User> GetCurrentUserAsync() => userManager.GetUserAsync(HttpContext.User);
 
     }
 }

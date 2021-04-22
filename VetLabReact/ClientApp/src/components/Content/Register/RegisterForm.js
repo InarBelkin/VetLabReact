@@ -10,7 +10,8 @@ class RegisterForm extends Component {
         this.onChange = this.onChange.bind(this);
     }
 
-    async OnRegister() {
+    async OnRegister(event) {
+        event.preventDefault();
         let request = await fetch("/api/account/register", {
             method: "POST",
             headers: {
@@ -28,7 +29,7 @@ class RegisterForm extends Component {
             this.state.errors = res.error;
             this.setState({errors: res.error});
         } else {
-            this.setState({errors:[]});
+            this.setState({errors: []});
         }
 
 
@@ -68,7 +69,9 @@ class RegisterForm extends Component {
                            name="passConf"
                            type={"password"}
                            onChange={this.onChange}/>
-                    <div><button onClick={this.OnRegister} >Регистрация</button></div>
+                    <div>
+                        <button onClick={this.OnRegister}>Регистрация</button>
+                    </div>
                 </form>
 
             </div>
