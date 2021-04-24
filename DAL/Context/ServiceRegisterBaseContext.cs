@@ -25,6 +25,7 @@ namespace DAL.Context
             //optionsBuilder.UseLazyLoadingProxies();
             services.AddDbContext<NewsContext>(options => options.UseLazyLoadingProxies().UseSqlServer(connection));
 
+
             return services;
         }
     }

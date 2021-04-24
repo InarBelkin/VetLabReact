@@ -14,10 +14,10 @@ namespace DAL.Context
         public NewsContext(DbContextOptions options) : base(options)
         {
 
-            this.Initialize();
+            //this.Initialize();
         }
 
-        private void Initialize()
+        public void Initialize()
         {
             this.Database.EnsureCreated();
             if (Posts.Any()&& Themes.Any() && Users.Any())

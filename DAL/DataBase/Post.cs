@@ -18,7 +18,7 @@ namespace DAL.Database
         [ForeignKey("ThemeId")]
         public virtual Theme Theme { get; set; }
 
-
+        //public string Migrat { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public string ContentPreview { get; set; }
