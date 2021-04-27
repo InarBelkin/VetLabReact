@@ -1,6 +1,8 @@
 ﻿using BLL;
 using DAL.Database;
+using DAL.DataBase;
 using DAL.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,6 +19,12 @@ namespace VetLabReact.Controllers
         public PostsController(IUnitOfWork basecontext) :
             base(basecontext, basecontext.Posts)
         { }
+
+        [Authorize(Roles = RolesNames.Admin)]
+        public override Task<ActionResult> DeletePost(int id)
+        {
+            return base.DeletePost(id);
+        }
 
     }
     //public class PostsController : Controller

@@ -17,9 +17,10 @@ namespace DAL.Context
 
             services.AddIdentity<User, IdentityRole>()
                .AddEntityFrameworkStores<NewsContext>();
+
             services.AddScoped(typeof(DbContext), typeof(NewsContext));
 
-           // services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));
+            // services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));
 
             //var optionsBuilder = new DbContextOptionsBuilder<NewsContext>();
             //optionsBuilder.UseLazyLoadingProxies();

@@ -85,6 +85,7 @@ namespace VetLabReact
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.RegisterDatabase(connection);
@@ -99,6 +100,23 @@ namespace VetLabReact
 
             //services.AddMvc().AddJsonOptions(options => {options.Ser })
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Name = "NewsVetLab";
+                options.LoginPath = "/";
+                options.AccessDeniedPath = "/";
+                options.LogoutPath = "/";
+                options.Events.OnRedirectToLogin = context =>
+                {
+                    context.Response.StatusCode = 401;
+                    return Task.CompletedTask;
+                };
+                options.Events.OnRedirectToAccessDenied = context =>
+                {
+                    context.Response.StatusCode = 401;
+                    return Task.CompletedTask;
+                };
+            });
 
 
             services.AddMvc().AddNewtonsoftJson(options =>
@@ -128,6 +146,9 @@ namespace VetLabReact
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

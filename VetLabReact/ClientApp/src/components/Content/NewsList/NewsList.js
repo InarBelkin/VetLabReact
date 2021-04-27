@@ -35,6 +35,9 @@ class NewsList extends Component {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
             });
+            if(request.status == 401){
+                alert("У вас нет прав на это");
+            }
             this.LoadAll();
             RenderDom();
         }

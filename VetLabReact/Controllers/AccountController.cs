@@ -1,4 +1,5 @@
 ﻿using DAL.Database;
+using DAL.DataBase;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -39,6 +40,7 @@ namespace VetLabReact.Controllers
 
                 if (result.Succeeded)
                 {
+                    await userManager.AddToRoleAsync(user, RolesNames.User);
                     await signInManager.SignInAsync(user, false);
                     var msg = new
                     {
@@ -125,8 +127,8 @@ namespace VetLabReact.Controllers
         {
             User usr = await GetCurrentUserAsync();
             bool isAuth = usr != null;
-            //var msg = new { isAuth, usr };
-            var msg = new { isAuth= isAuth, user = usr };
+           
+            var msg = new { isAuth = isAuth, user = usr };
             return Ok(msg);
         }
 

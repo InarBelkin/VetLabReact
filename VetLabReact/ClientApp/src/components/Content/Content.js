@@ -6,6 +6,9 @@ import  {Route} from "react-router-dom"
 import PostEditor from "./PostEditor/PostEditor";
 import PostCreator from "./PostEditor/PostCreator";
 import RegisterForm from "./Register/RegisterForm";
+import classNames from "classnames";
+import s from "./Content.module.css";
+
 class Content extends Component {
     constructor(props) {
         super(props);
@@ -13,9 +16,9 @@ class Content extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className={classNames("container",s.CBack)}>
                 <div className="row">
-                    <div className="col-sm-3"><SidePanel/></div>
+                    <div className={classNames("col-sm-3", s.CSide)}><SidePanel/></div>
                     <div className="col-sm-9">
                         <Route exact path='/postcreate' component={PostCreator}/>
                         <Route exact path='/' render={()=><NewsList apiUrl={"/api/posts/"}/>}/>
