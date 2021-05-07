@@ -42,6 +42,7 @@ namespace VetLabReact.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = RolesNames.Admin)]
         public virtual async Task<IActionResult> Update([FromRoute] int id, [FromBody] M model)
         {
             if (!ModelState.IsValid)
@@ -55,6 +56,7 @@ namespace VetLabReact.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RolesNames.Admin)]
         public virtual async Task<ActionResult<M>> Create(M model)
         {
             if (!ModelState.IsValid)

@@ -8,6 +8,7 @@ import PostCreator from "./PostEditor/PostCreator";
 import RegisterForm from "./Register/RegisterForm";
 import classNames from "classnames";
 import s from "./Content.module.css";
+import SinglePost from "./SinglePost/SinglePost";
 
 class Content extends Component {
     constructor(props) {
@@ -21,10 +22,10 @@ class Content extends Component {
                     <div className={classNames("col-sm-3", s.CSide)}><SidePanel/></div>
                     <div className="col-sm-9">
                         <Route exact path='/postcreate' component={PostCreator}/>
-                        <Route exact path='/' render={()=><NewsList apiUrl={"/api/posts/"}/>}/>
+                        <Route exact path='/' render={()=><NewsList/>}/>
                         <Route path = '/postedit/:id' component={PostEditor}/>
                         <Route path = '/register' component = {RegisterForm}/>
-
+                        <Route path='/post/:id' component={SinglePost}/>
                     </div>
                 </div>
             </div>

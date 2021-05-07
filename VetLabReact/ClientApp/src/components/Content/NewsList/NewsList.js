@@ -16,7 +16,7 @@ class NewsList extends Component {
     }
 
     async LoadAll() {
-        var request = await fetch(this.props.apiUrl, {
+        var request = await fetch("/api/posts/", {
             method: "GET",
             mode: "cors",
             credintials: "include"
@@ -44,6 +44,7 @@ class NewsList extends Component {
     }
 
     async onEditPost(mpost) {
+
         if(mpost){
             window.location.assign("/postedit/"+mpost.id);
         }

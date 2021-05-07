@@ -21,10 +21,18 @@ namespace DAL.Repositories
                 To.ThemeId = item.ThemeId;
                 To.Title = item.Title;
                 To.Content = item.Content;
-                To.ContentPreview = item.ContentPreview;
-                To.Date = item.Date;
+                To.ContentPreview = item.Content;
+
+                //To.Date = item.Date;  //дата остаётся той же
                 base.UpdateItem(To);
             }
+        }
+        public override async Task<Post> Create(Post item)
+        {
+            item.Date = DateTime.Now;
+            item.ContentPreview = item.Content.Remove(40)+"...";
+            var a = await db2.AddAsync(item);
+            return a.Entity;
         }
     }
 

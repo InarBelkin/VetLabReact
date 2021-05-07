@@ -26,7 +26,7 @@ class Post extends Component {
             <div className={s.SBlock}>
                 <p>Тема:{this.state.theme.name}</p>
                 <p align="right">{this.state.date}</p>
-                <NavLink to={"/1"} className={s.STitle}>{this.state.title}</NavLink>
+                <NavLink to={"/post/"+this.state.id} className={s.STitle}>{this.state.title}</NavLink>
                 <p><button onClick={this.onClick}>Удалить</button></p>
                 <p>{this.state.contentPreview}</p>
                 <p><button onClick={this.onClickEdit}>Изменить</button></p>

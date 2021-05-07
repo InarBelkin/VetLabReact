@@ -62,26 +62,6 @@ class PostEditor extends Component {
 
 
 
-    // async onSubmit(e) {
-    //     e.preventDefault();
-    //     let request = await fetch("/api/posts/", {
-    //         method: "PUP",
-    //         headers: {
-    //             'Content-Type': 'application/json;charset=utf-8'
-    //         },
-    //         body: JSON.stringify({
-    //             "contentPreview": this.state.content,
-    //             "content": this.state.content,
-    //             "title": this.state.title,
-    //             "themeId": this.state.themeid,
-    //             "userId": 1,
-    //             "date": "2021-03-13T23:00:00"
-    //         })
-    //     });
-    //     //window.location.assign("/");
-    //     document.location = ('/');
-    // }
-
     render() {
         var content = this.state.isLoading === true ? <p>Загрузка</p> : <PostForm
             //ResponseMethod={this.SetPost}
