@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {RenderDom} from "../../../render";
 import PostForm from "./PostForm";
+import {Button, Modal} from "react-bootstrap";
 
 class PostCreator extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class PostCreator extends Component {
                 <PostForm
                     ResponseMethod={this.ReturnPost}
                     post={this.state.post}/>
-                <button onClick={this.OnCreate}>Создать</button>
+                <Button variant="primary" onClick={this.OnCreate}>Создать</Button>
             </div>
         )
     }

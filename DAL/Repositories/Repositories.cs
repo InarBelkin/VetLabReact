@@ -29,7 +29,9 @@ namespace DAL.Repositories
                 To.ThemeId = item.ThemeId;
                 To.Title = item.Title;
                 To.Content = item.Content;
-                To.ContentPreview = item.Content;
+                if (item.Content.Length > 39)
+                    To.ContentPreview = item.Content.Remove(40) + "...";
+                else To.ContentPreview = item.Content;
 
                 //To.Date = item.Date;  //дата остаётся той же
                 base.UpdateItem(To);
@@ -38,10 +40,14 @@ namespace DAL.Repositories
         public override async Task<Post> Create(Post item)
         {
             item.Date = DateTime.Now;
-            item.ContentPreview = item.Content.Remove(40)+"...";
+            if (item.Content.Length > 39)
+                item.ContentPreview = item.Content.Remove(40) + "...";
+            else item.ContentPreview = item.Content;
             var a = await db2.AddAsync(item);
             return a.Entity;
         }
+
+       
     }
 
     public class ThemeRepos : AbstractRepos<Theme>

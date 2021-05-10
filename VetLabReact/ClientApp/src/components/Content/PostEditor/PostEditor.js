@@ -4,6 +4,7 @@ import s from "./PostEditor.module.css";
 import Select from 'react-select'
 import {RenderDom} from "../../../render";
 import PostForm from "./PostForm";
+import {Button, Modal} from "react-bootstrap";
 
 class PostEditor extends Component {
     constructor(props) {
@@ -70,7 +71,7 @@ class PostEditor extends Component {
         return (
             <div className={s.PEditor}>
                 {content}
-                <button onClick={this.OnSubmit}>Создать</button>
+                <Button onClick={this.OnSubmit}>Изменить</Button>
             </div>
         )
     }

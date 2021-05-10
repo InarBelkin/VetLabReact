@@ -10,6 +10,9 @@ using VetLabReact.Model;
 
 namespace VetLabReact.Controllers
 {
+    /// <summary>
+    /// абстрактный репозиторий для крад операций.
+    /// </summary>
     [Produces("application/json")]
     public class AccountController : Controller
     {

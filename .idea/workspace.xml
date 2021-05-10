@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8a1725-1523-42f6-ba1f-8aa24969a66d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/SinglePost/SinglePost.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAL/Repositories/Repositories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/Repositories/Repositories.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/BasicParts/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/BasicParts/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/NewsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/NewsList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/ModalAuthorization.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/ModalAuthorization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/SinglePost/SinglePost.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/SinglePost/SinglePost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/SidePanel/SidePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/SidePanel/SidePanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VetLabReact/Controllers/AbstractController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/Controllers/AbstractController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VetLabReact/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/Controllers/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/Controllers/PostsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VetLabReact/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
       <workItem from="1620551033451" duration="6769000" />
       <workItem from="1620575164240" duration="1823000" />
       <workItem from="1620584994586" duration="8191000" />
-      <workItem from="1620644866842" duration="8892000" />
+      <workItem from="1620644866842" duration="19341000" />
     </task>
     <servers />
   </component>

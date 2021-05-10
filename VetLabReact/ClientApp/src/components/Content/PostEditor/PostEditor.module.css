@@ -15,6 +15,10 @@ height: auto;
     height: 300px;
 }
 
+.PTitle{
+    width:100%;
+}
+
 .fc{
     font-family: "Times New Roman";
 }

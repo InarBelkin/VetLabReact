@@ -26,7 +26,7 @@ class SidePanel extends Component {
                 <div >Фильтр по темам</div>
                 <div>{
                     this.state.themes.map(function (t) {
-                        return <NavLink to={"/themes/"+t.id} className="nav-link">{t.name}</NavLink>
+                        return <NavLink key={t.id} to={"/themes/"+t.id} className="nav-link">{t.name}</NavLink>
                     })
                 }
 

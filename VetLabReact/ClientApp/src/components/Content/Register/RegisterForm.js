@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-
+import {Button, Modal} from "react-bootstrap";
 
 class RegisterForm extends Component {
     constructor(props) {
@@ -70,7 +70,7 @@ class RegisterForm extends Component {
                            type={"password"}
                            onChange={this.onChange}/>
                     <div>
-                        <button onClick={this.OnRegister}>Регистрация</button>
+                        <Button onClick={this.OnRegister}>Регистрация</Button>
                     </div>
                 </form>
 

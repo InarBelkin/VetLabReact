@@ -30,7 +30,7 @@ class BsNavbar extends Component {
     render() {
         var editor = this.state.isAdmin ?                         <li className="nav-item">
             <NavLink to={"/postcreate"} className="nav-link">Редактор</NavLink>
-        </li> : <li></li>
+        </li> : null;
 
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,9 +42,9 @@ class BsNavbar extends Component {
                         <li className="nav-item">
                             <NavLink to={"/"} className="nav-link">Список</NavLink>
                         </li>
-                       <li>
+                       <div>
                            {editor}
-                       </li>
+                       </div>
                         <li className="nav-item">
                             <NavLink to={"/register"} className="nav-link">Регистрация</NavLink>
                         </li>

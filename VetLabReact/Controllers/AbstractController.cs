@@ -11,12 +11,15 @@ using System.Threading.Tasks;
 
 namespace VetLabReact.Controllers
 {
+    /// <summary>
+    /// Этот контроллер реализует crud операции для наследников
+    /// </summary>
     [ApiController]
     public abstract class AbstractController<M> : Controller where M : class
     {
         protected IUnitOfWork db;
         protected IRepository<M> rep;
-        public AbstractController(IUnitOfWork basecontext, IRepository<M> repository)  
+        public AbstractController(IUnitOfWork basecontext, IRepository<M> repository)
         {
             db = basecontext;
             rep = repository;

@@ -8,14 +8,16 @@ import {RenderDom} from "../../../render";
 class NewsList extends Component {
     constructor(props) {
         super(props);
-        this.state = {mposts: []};
+        this.state = {mposts: [], loadedThemeid:0};
         this.LoadAll = this.LoadAll.bind(this);
         this.LoadByTheme = this.LoadByTheme.bind(this);
         this.onRemovePost = this.onRemovePost.bind(this);
         this.onEditPost = this.onEditPost.bind(this);
+        this.loadChange = this.loadChange.bind(this);
         if (this.props.match === undefined)
             this.LoadAll();
         else this.LoadByTheme(this.props.match.params.id);
+
     }
 
     async LoadAll() {
@@ -39,8 +41,18 @@ class NewsList extends Component {
         if (request.ok) {
             var res = await request.json();
             this.setState({"mposts": res});
+            this.setState({loadedThemeid:ThId});
+        }
+
+    }
+
+    loadChange(ThId){
+        if(this.state.loadedThemeid!=ThId)
+        {
+            this.LoadByTheme(ThId);
         }
     }
+
 
     async onRemovePost(mpost) {
         if (mpost) {
@@ -65,6 +77,10 @@ class NewsList extends Component {
     }
 
     render() {
+        if (this.props.match != undefined)
+        {
+            this.loadChange(this.props.match.params.id);
+        }
         var remove = this.onRemovePost;
         var edit = this.onEditPost;
 

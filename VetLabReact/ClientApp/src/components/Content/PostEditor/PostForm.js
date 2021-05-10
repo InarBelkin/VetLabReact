@@ -4,6 +4,7 @@ import Select from "react-select";
 import s from "./PostEditor.module.css";
 import {render} from "react-dom";
 
+
 class PostForm extends Component {
     constructor(props) {
         super(props);
@@ -78,7 +79,7 @@ class PostForm extends Component {
                             options={this.state.themes}
                     />
                     <p>Заголовок</p>
-                    <input type={<textarea name="" id="" cols="30" rows="10"></textarea>}
+                    <input className={s.PTitle} type={<textarea name="" id="" cols="30" rows="10"></textarea>}
                            value={this.state.post.title}
                            name="title"
                            onChange={this.onChangeTitle}/>
