@@ -26,6 +26,7 @@ class Content extends Component {
                         <Route path = '/postedit/:id' component={PostEditor}/>
                         <Route path = '/register' component = {RegisterForm}/>
                         <Route path='/post/:id' component={SinglePost}/>
+                        <Route path = '/themes/:id' component = {NewsList}/>
                     </div>
                 </div>
             </div>

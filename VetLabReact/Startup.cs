@@ -28,7 +28,9 @@ namespace VetLabReact
 
         private static async Task CreateUserRoles(IServiceProvider ServiceProvider)
         {
-           
+            NewsContext a = (NewsContext)ServiceProvider.GetService(typeof(DbContext));
+            a.Initialize();
+
             RoleManager<IdentityRole> RoleManager = ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             UserManager<User> UserManager = ServiceProvider.GetRequiredService<UserManager<User>>();
             if (await RoleManager.FindByNameAsync(RolesNames.Admin) == null)
@@ -76,8 +78,7 @@ namespace VetLabReact
                 }
             }
 
-            NewsContext a = (NewsContext)ServiceProvider.GetService(typeof(DbContext));
-            a.Initialize();
+            
         }
 
 

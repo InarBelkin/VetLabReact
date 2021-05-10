@@ -126,9 +126,17 @@ namespace VetLabReact.Controllers
         public async Task<IActionResult> LogisAuthenticatedOff()
         {
             User usr = await GetCurrentUserAsync();
+
             bool isAuth = usr != null;
-           
-            var msg = new { isAuth = isAuth, user = usr };
+
+            IList<string> roles= new List<String>();
+
+            if (isAuth)
+            {
+               roles =  await userManager.GetRolesAsync(usr);
+            }
+            
+            var msg = new { isAuth = isAuth, user = usr, roles = roles };
             return Ok(msg);
         }
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import s from "./SinglePost.module.css"
 class SinglePost extends Component{
     constructor(props) {
         super(props);
@@ -26,7 +26,7 @@ class SinglePost extends Component{
     finalRender(){
         return(
             <div>
-                <div>{this.state.post.title}</div>
+                <div className={s.Title}>{this.state.post.title}</div>
                 <div>{this.state.post.content}</div>
             </div>
         )

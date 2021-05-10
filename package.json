@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dayjs": "^1.10.4",
     "hookrouter": "^1.2.5",
     "query-string": "^7.0.0",
     "react-router-dom": "^5.2.0"

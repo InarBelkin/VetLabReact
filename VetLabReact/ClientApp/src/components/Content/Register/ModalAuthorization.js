@@ -70,6 +70,7 @@ class ModalAuthorization extends Component {
         this.getUser();
         if (request.ok) {
             this.handleClose();
+            window.location.href = "/";
         }
     }
 
@@ -81,6 +82,7 @@ class ModalAuthorization extends Component {
             },
         })
         await this.getUser();
+        window.location.href = "/";
     }
 
     handleClose() {

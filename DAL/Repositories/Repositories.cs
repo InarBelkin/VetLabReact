@@ -1,5 +1,6 @@
 ﻿using DAL.Context;
 using DAL.Database;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,13 @@ namespace DAL.Repositories
     public class PostRepos : AbstractRepos<Post>
     {
         public PostRepos(NewsContext context) : base(context.Posts, context) { }
+
+        public async Task<List<Post>> GetByTheme(int themeid)
+        {
+            var a = await db.Posts.ToListAsync();
+            List<Post> rezult = a.Where(p => p.ThemeId == themeid).ToList();
+            return rezult;
+        }
 
         public override void UpdateItem(Post item)
         {

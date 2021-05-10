@@ -20,6 +20,15 @@ namespace VetLabReact.Controllers
             base(basecontext, basecontext.Posts)
         { }
 
+        [HttpGet("theme/{id}")]
+        public virtual async Task<ActionResult<IEnumerable<Post>>> GetByTheme(int id)
+        {
+            var a = await db.Posts.GetByTheme(id);
+            return new ActionResult<IEnumerable<Post>>(a);
+            // return new ActionResult<IEnumerable<Post>>(new List<Post>());
+        }
+
+
         [Authorize(Roles = RolesNames.Admin)]
         public override Task<ActionResult> DeletePost(int id)
         {

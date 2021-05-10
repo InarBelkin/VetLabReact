@@ -14,9 +14,9 @@ namespace VetLabReact.Controllers
     [ApiController]
     public abstract class AbstractController<M> : Controller where M : class
     {
-        private IUnitOfWork db;
-        private IRepository<M> rep;
-        public AbstractController(IUnitOfWork basecontext, IRepository<M> repository)
+        protected IUnitOfWork db;
+        protected IRepository<M> rep;
+        public AbstractController(IUnitOfWork basecontext, IRepository<M> repository)  
         {
             db = basecontext;
             rep = repository;
