@@ -1,0 +1,26 @@
+.SBlock
+{
+
+    margin: 30px 30px;
+    background-color: #6c83ca;
+    border-radius: 10px;
+
+    transition: 0.5s;
+    transform-style: preserve-3d;
+
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: 30px 40px auto 8px;
+}
+
+.STitle{
+    /*Добавь onhover*/
+    font-size: 20px;
+    font-weight: bold ;
+    margin: auto auto auto 10px;
+    color: black;
+}
+.SBlock p{
+    font-family: 'Consolas', cursive;
+    margin: auto auto auto 10px;
+}

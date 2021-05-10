@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+import React, {Component} from 'react';
+import {Route} from 'react-router';
 
 import './custom.css'
+import s from "./components/Content/Content.module.css"
+
+import Header from "./components/BasicParts/Header";
+import BsNavbar from "./components/BasicParts/Navbar";
+import Content from "./components/Content/Content";
 
 export default class App extends Component {
-  static displayName = App.name;
+    static displayName = App.name;
 
-  render () {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-      </Layout>
-    );
-  }
+    render() {
+        return (
+            <div className={s.CBack}>
+                <BsNavbar/>
+                <Content/>
+            </div>
+        );
+    }
 }

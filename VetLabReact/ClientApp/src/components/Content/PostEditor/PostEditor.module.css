@@ -1,0 +1,28 @@
+.PEditor{
+    height: auto;
+}
+
+.PEditor p{
+
+}
+.PEditor form{
+    height: auto;
+}
+
+.PContent{
+height: auto;
+    width:100%;
+    height: 300px;
+}
+
+.PTitle{
+    width:100%;
+}
+
+.fc{
+    font-family: "Times New Roman";
+}
+
+.sc{
+    font-size: 10px;
+}

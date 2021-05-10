@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d8a1725-1523-42f6-ba1f-8aa24969a66d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAL/Repositories/Repositories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/Repositories/Repositories.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/BasicParts/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/BasicParts/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/NewsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/NewsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/NewsList/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostEditor.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/PostEditor/PostForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/Register/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/SidePanel/SidePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/ClientApp/src/components/Content/SidePanel/SidePanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/Controllers/AbstractController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/Controllers/AbstractController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetLabReact/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VetLabReact/Controllers/AccountController.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rCUk6i7vxqY17zSfMfjC8GBQfi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\C#\VetLabReact\VetLabReact\ClientApp\src\components\Content\NewsList" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\C#\VetLabReact\VetLabReact\ClientApp\src\components\Content\PostEditor" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d8a1725-1523-42f6-ba1f-8aa24969a66d" name="Default Changelist" comment="" />
+      <created>1618479705173</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618479705173</updated>
+      <workItem from="1618479707534" duration="36920000" />
+      <workItem from="1618670008646" duration="12299000" />
+      <workItem from="1618699981202" duration="1011000" />
+      <workItem from="1618749686949" duration="10700000" />
+      <workItem from="1618762142922" duration="61000" />
+      <workItem from="1618762262138" duration="153000" />
+      <workItem from="1619035979488" duration="5120000" />
+      <workItem from="1619092785152" duration="26000" />
+      <workItem from="1619092978795" duration="23581000" />
+      <workItem from="1619566337401" duration="101000" />
+      <workItem from="1619599958576" duration="2480000" />
+      <workItem from="1619603245275" duration="3493000" />
+      <workItem from="1620419090307" duration="2286000" />
+      <workItem from="1620511597867" duration="1878000" />
+      <workItem from="1620551033451" duration="6769000" />
+      <workItem from="1620575164240" duration="1823000" />
+      <workItem from="1620584994586" duration="8191000" />
+      <workItem from="1620644866842" duration="19341000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

@@ -12,8 +12,9 @@ namespace BLL
     {
         public static IServiceCollection RegisterDatabase(this IServiceCollection services, string connection)
         {
-            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
-            services.RegisterBaseContext(connection);
+            
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));    //возможно надо через другой метод добавлять
+            services.RegisterBaseContext(connection);                       //чтобы каждый раз заново не создавался контекст
             return services;
         }
     }

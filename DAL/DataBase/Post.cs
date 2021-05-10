@@ -10,17 +10,18 @@ namespace DAL.Database
     public class Post
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [ForeignKey("UserId")]
-        public virtual User User{ get; set; }
+        public virtual User User { get; set; }
 
         public int ThemeId { get; set; }
         [ForeignKey("ThemeId")]
         public virtual Theme Theme { get; set; }
 
-
+        //public string Migrat { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-
+        public string ContentPreview { get; set; }
+        public DateTime Date { get; set; }
     }
 }
